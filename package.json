@@ -1,0 +1,24 @@
+{
+  "name": "liftoff",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido no treinamento da Rocketseat: Crie um gerenciador de perguntas anônimas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagostudier/liftoff.git"
+  },
+  "keywords": [],
+  "author": "Thiago Studier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiagostudier/liftoff/issues"
+  },
+  "homepage": "https://github.com/thiagostudier/liftoff#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  }
+}
