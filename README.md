@@ -16,7 +16,7 @@ https://www.figma.com/community/file/1009821158959690135/Roquet.q
 
 ### Instalar pacotes do node
 
-> \_Objetivo: Necessário ter npm instalado
+> \_Observação: Necessário ter npm instalado
 
 - `npm install`
 - `npm start`
