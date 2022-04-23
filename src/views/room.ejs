@@ -30,11 +30,11 @@
         <img src="/images/logo.svg" alt="Rocket.Q Logo" />
 
         <div class="buttons">
-          <div class="button outlined" id="room-id" data-id="323243">
-            #323243
+          <div class="button outlined" id="room-id" data-id="<%= roomId %>">
+            #<%= roomId %>
             <img src="/images/copy.svg" alt="Copiar código da sala" />
           </div>
-          <a href="#" class="button">
+          <a href="/create-pass" class="button">
             <img src="/images/users-white.svg" alt="Criar sala" />
             Criar sala
           </a>
@@ -43,7 +43,7 @@
       <main>
         <section id="question-form">
           <h2>Faça sua pergunta</h2>
-          <form action="">
+          <form action="/question/create/<%= roomId %>" method="POST">
             <label class="sr-only" for-id="question">
               O que você deseja perguntar?
             </label>
@@ -65,68 +65,34 @@
         <section id="questions">
           <h2 class="sr-only">Perguntas da comunidade</h2>
           <div class="questions">
-            <div class="question-wrapper">
+
+            <% if(questions.length === 0){ %>
+              <%- include('parts/no-question') %>
+            <% } %>
+
+
+            <% questions.forEach(question => { %>
+            <div class="question-wrapper <%= question.read ? 'read' : '' %> ">
               <div class="question-content">
                 <div class="user">
                   <img src="/images/avatar.svg" alt="Avatar" />
                 </div>
                 <div class="question">
-                  <p>Qual a diferença entre const, var e let no javascript?</p>
+                  <p><%= question.title %></p>
                 </div>
               </div>
               <div class="actions">
-                <a href="#" class="check" data-id="1">
+                <a href="#" class="check" data-id="<%= question.id %>">
                   <img src="/images/readed.svg" alt="Marcar como lida" />
                   Marcar como lida
                 </a>
-                <a href="#" class="delete" data-id="1">
+                <a href="#" class="delete" data-id="<%= question.id %>">
                   <img src="/images/trash.svg" alt="Excluir" />
                   Excluir
                 </a>
               </div>
             </div>
-
-            <div class="question-wrapper">
-              <div class="question-content">
-                <div class="user">
-                  <img src="/images/avatar.svg" alt="Avatar" />
-                </div>
-                <div class="question">
-                  <p>Qual a diferença entre const, var e let no javascript?</p>
-                </div>
-              </div>
-              <div class="actions">
-                <a href="#" class="check" data-id="2">
-                  <img src="/images/readed.svg" alt="Marcar como lida" />
-                  Marcar como lida
-                </a>
-                <a href="#" class="delete" data-id="2">
-                  <img src="/images/trash.svg" alt="Excluir" />
-                  Excluir
-                </a>
-              </div>
-            </div>
-
-            <div class="question-wrapper read">
-              <div class="question-content">
-                <div class="user">
-                  <img src="/images/avatar.svg" alt="Avatar" />
-                </div>
-                <div class="question">
-                  <p>Qual a diferença entre const, var e let no javascript?</p>
-                </div>
-              </div>
-              <div class="actions">
-                <a href="#" class="check">
-                  <img src="/images/readed.svg" data-id="3" alt="Marcar como lida" />
-                  Marcar como lida
-                </a>
-                <a href="#" class="delete">
-                  <img src="/images/trash.svg" data-id="3" alt="Excluir" />
-                  Excluir
-                </a>
-              </div>
-            </div>
+            <% }) %>
           </div>
         </section>
       </main>
@@ -139,9 +105,9 @@
         <p>Tem certeza que você deseja excluir esta pergunta?</p>
 
         <form action="#" method="POST">
-          <label class="sr-only" for-id="password"
-            >Digite sua senha admin</label
-          >
+          <label class="sr-only" for-id="password">
+            Digite sua senha admin
+          </label>
           <input
             type="password"
             id="password"
