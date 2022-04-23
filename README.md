@@ -1,18 +1,49 @@
-# NLW - Mission: Discover
+# Escopo e objetivo
 
-Bootcamp da Rocketseat de Node.js
+Projeto desenvolvido no Rocketseat Mission: Discover.
 
-Figma: https://www.figma.com/community/file/1009821158959690135/Roquet.q
+O projeto inclui:
+(a) Node
+(b) EJS
 
-npm init -y
+### Figma de referência
 
-npm install ejs
+https://www.figma.com/community/file/1009821158959690135/Roquet.q
 
-npm install express
+## Iniciando...
 
-npm install nodemon -D
+- `git clone https://github.com/thiagostudier/liftoff.git`
 
-npm install sqlite
-npm install sqlite3
+### Instalar pacotes do node
 
-npm run init-db
+> \_Objetivo: Necessário ter npm instalado
+
+- `npm install`
+- `npm start`
+
+## Comandos de desenvolvimento
+
+#### Criar package json
+
+- `npm init -y`
+
+#### Instalar EJS
+
+- `npm install ejs`
+
+#### Instalar Express
+
+- `npm install express`
+
+#### Instalar Nodemon
+
+- `npm install nodemon -D`
+
+#### Instalar SQLite
+
+- `npm install sqlite`
+- `npm install sqlite3`
+
+##### Iniciar banco de dados
+
+- `npm run init-db`
